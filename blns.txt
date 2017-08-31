@@ -98,11 +98,45 @@ INF
 
 #	Special Characters
 #
-#	Strings which contain common special ASCII characters (may need to be escaped)
+# ASCII punctuation.  All of these characters may need to be escaped in some
+# contexts.  Divided into three groups based on (US-layout) keyboard position.
 
 ,./;'[]\-=
 <>?:"{}|_+
 !@#$%^&*()`~
+
+# Non-whitespace C0 controls: U+0001 through U+0008, U+000E through U+001F,
+# and U+007F (DEL)
+# Often forbidden to appear in various text-based file formats (e.g. XML),
+# or reused for internal delimiters on the theory that they should never
+# appear in input.
+# The next line may appear to be blank or mojibake in some viewers.
+
+
+# Non-whitespace C1 controls: U+0080 through U+0084 and U+0086 through U+009F.
+# Commonly misinterpreted as additional graphic characters.
+# The next line may appear to be blank, mojibake, or dingbats in some viewers.
+
+
+# Whitespace: all of the characters with category Zs, Zl, or Zp (in Unicode
+# version 8.0.0), plus U+0009 (HT), U+000B (VT), U+000C (FF), U+0085 (NEL),
+# and U+200B (ZERO WIDTH SPACE), which are in the C categories but are often
+# treated as whitespace in some contexts.
+# This file unfortunately cannot express strings containing
+# U+0000, U+000A, or U+000D (NUL, LF, CR).
+# The next line may appear to be blank or mojibake in some viewers.
+# The next line may be flagged for "trailing whitespace" in some viewers.
+	              ​    　
+
+# Unicode additional control characters: all of the characters with
+# general category Cf (in Unicode 8.0.0).
+# The next line may appear to be blank or mojibake in some viewers.
+­؀؁؂؃؄؅؜۝܏᠎​‌‍‎‏‪‫‬‭‮⁠⁡⁢⁣⁤⁦⁧⁨⁩⁪⁫⁬⁭⁮⁯﻿￹￺￻𑂽𛲠𛲡𛲢𛲣𝅳𝅴𝅵𝅶𝅷𝅸𝅹𝅺󠀁󠀠󠀡󠀢󠀣󠀤󠀥󠀦󠀧󠀨󠀩󠀪󠀫󠀬󠀭󠀮󠀯󠀰󠀱󠀲󠀳󠀴󠀵󠀶󠀷󠀸󠀹󠀺󠀻󠀼󠀽󠀾󠀿󠁀󠁁󠁂󠁃󠁄󠁅󠁆󠁇󠁈󠁉󠁊󠁋󠁌󠁍󠁎󠁏󠁐󠁑󠁒󠁓󠁔󠁕󠁖󠁗󠁘󠁙󠁚󠁛󠁜󠁝󠁞󠁟󠁠󠁡󠁢󠁣󠁤󠁥󠁦󠁧󠁨󠁩󠁪󠁫󠁬󠁭󠁮󠁯󠁰󠁱󠁲󠁳󠁴󠁵󠁶󠁷󠁸󠁹󠁺󠁻󠁼󠁽󠁾󠁿
+
+# "Byte order marks", U+FEFF and U+FFFE, each on its own line.
+# The next two lines may appear to be blank or mojibake in some viewers.
+﻿
+￾
 
 #	Unicode Symbols
 #
@@ -159,18 +193,26 @@ INF
 울란바토르
 𠜎𠜱𠝹𠱓𠱸𠲖𠳏
 
+#	Changing length when lowercased
+#
+#	Characters which increase in length (2 to 3 bytes) when lowercased
+#	Credit: https://twitter.com/jifa/status/625776454479970304
+
+Ⱥ
+Ⱦ
+
 #	Japanese Emoticons
 #
 #	Strings which consists of Japanese-style emoticons which are popular on the web
 
-ヽ༼ຈل͜ຈ༽ﾉ ヽ༼ຈل͜ຈ༽ﾉ 
+ヽ༼ຈل͜ຈ༽ﾉ ヽ༼ຈل͜ຈ༽ﾉ
 (｡◕ ∀ ◕｡)
 ｀ｨ(´∀｀∩
 __ﾛ(,_,*)
 ・(￣∀￣)・:*:
 ﾟ･✿ヾ╲(｡◕‿◕｡)╱✿･ﾟ
 ,。・:*:・゜’( ☻ ω ☻ )。・:*:・゜’
-(╯°□°）╯︵ ┻━┻)  
+(╯°□°）╯︵ ┻━┻)
 (ﾉಥ益ಥ）ﾉ﻿ ┻━┻
 ┬─┬ノ( º _ ºノ)
 ( ͡° ͜ʖ ͡°)
@@ -181,7 +223,7 @@ __ﾛ(,_,*)
 
 😍
 👩🏽
-👾 🙇 💁 🙅 🙆 🙋 🙎 🙍 
+👾 🙇 💁 🙅 🙆 🙋 🙎 🙍
 🐵 🙈 🙉 🙊
 ❤️ 💔 💌 💕 💞 💓 💗 💖 💘 💝 💟 💜 💛 💚 💙
 ✋🏿 💪🏿 👐🏿 🙌🏿 👏🏿 🙏🏿
@@ -193,7 +235,7 @@ __ﾛ(,_,*)
 #       Regional Indicator Symbols can be displayed differently across
 #       fonts, and have a number of special behaviors
 
-🇺🇸🇷🇺🇸 🇦🇫🇦🇲🇸                                                                                          
+🇺🇸🇷🇺🇸 🇦🇫🇦🇲🇸
 🇺🇸🇷🇺🇸🇦🇫🇦🇲
 🇺🇸🇷🇺🇸🇦
 
@@ -214,19 +256,6 @@ __ﾛ(,_,*)
 ﷽
 ﷺ
 مُنَاقَشَةُ سُبُلِ اِسْتِخْدَامِ اللُّغَةِ فِي النُّظُمِ الْقَائِمَةِ وَفِيم يَخُصَّ التَّطْبِيقَاتُ الْحاسُوبِيَّةُ، 
-
-#	Unicode Spaces
-#
-#	Strings which contain unicode space characters with special properties (c.f. https://www.cs.tut.fi/~jkorpela/chars/spaces.html)
-
-​
- 
-᠎
-　
-﻿
-␣
-␢
-␡
 
 #	Trick Unicode
 #
@@ -275,15 +304,15 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
 <script>alert(123)</script>
 &lt;script&gt;alert(&#39;123&#39;);&lt;/script&gt;
 <img src=x onerror=alert(123) />
-<svg><script>123<1>alert(123)</script> 
+<svg><script>123<1>alert(123)</script>
 "><script>alert(123)</script>
 '><script>alert(123)</script>
 ><script>alert(123)</script>
 </script><script>alert(123)</script>
 < / script >< script >alert(123)< / script >
- onfocus=JaVaSCript:alert(123) autofocus 
-" onfocus=JaVaSCript:alert(123) autofocus 
-' onfocus=JaVaSCript:alert(123) autofocus 
+ onfocus=JaVaSCript:alert(123) autofocus
+" onfocus=JaVaSCript:alert(123) autofocus
+' onfocus=JaVaSCript:alert(123) autofocus
 ＜script＞alert(123)＜/script＞
 <sc<script>ript>alert(123)</sc</script>ript>
 --><script>alert(123)</script>
@@ -304,7 +333,7 @@ src=JaVaSCript:prompt(132)
 <script\x0Ctype="text/javascript">javascript:alert(1);</script>
 <script\x2Ftype="text/javascript">javascript:alert(1);</script>
 <script\x0Atype="text/javascript">javascript:alert(1);</script>
-'`"><\x3Cscript>javascript:alert(1)</script>        
+'`"><\x3Cscript>javascript:alert(1)</script>
 '`"><\x00script>javascript:alert(1)</script>
 ABC<div style="x\x3Aexpression(javascript:alert(1)">DEF
 ABC<div style="x:expression\x5C(javascript:alert(1)">DEF
@@ -562,6 +591,7 @@ $ENV{'HOME'}
 %s
 {0}
 %*.*s
+File:///
 
 #	File Inclusion
 #
@@ -645,8 +675,9 @@ Roses are [0;31mred[0m, violets are [0;34mblue. Hope you enjoy terminal hue
 But now...[20Cfor my greatest trick...[8m
 The quick brown fox... [Beeeep]
 
-#	iOS Vulnerability
+#	iOS Vulnerabilities
 #
-#	Strings which crashed iMessage in iOS versions 8.3 and earlier
+#	Strings which crashed iMessage in various versions of iOS
 
 Powerلُلُصّبُلُلصّبُررً ॣ ॣh ॣ ॣ冗
+🏳0🌈️
